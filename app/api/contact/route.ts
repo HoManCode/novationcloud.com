@@ -6,8 +6,9 @@ import { Resend } from "resend";
 export async function POST(request: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
 
-    if (!apiKey) {
+    if (!apiKey || !turnstileSecret) {
       return NextResponse.json(
         { error: "Email service not configured" },
         { status: 500 }
@@ -16,11 +17,44 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
 
-    const { name, email, company, message } = await request.json();
+    const { name, email, company, message, captchaToken } = await request.json();
+
+    if (!captchaToken) {
+      return NextResponse.json(
+        { error: "Captcha token missing" },
+        { status: 400 }
+      );
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
+
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+    const formData = new FormData();
+    formData.append("secret", turnstileSecret);
+    formData.append("response", captchaToken);
+    if (ip) {
+      formData.append("remoteip", ip);
+    }
+
+    const captchaRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const captchaResult = await captchaRes.json();
+
+    if (!captchaResult?.success) {
+      console.warn("Turnstile verification failed", captchaResult);
+      return NextResponse.json(
+        { error: "Captcha validation failed" },
         { status: 400 }
       );
     }
