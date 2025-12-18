@@ -1,3 +1,18 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About NovationCloud | Engineering-led Cloud Consultancy",
+  description:
+    "Learn about NovationCloud: engineering-first cloud migration, DevOps automation, and modernisation consultancy serving Australia first and global customers.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About NovationCloud",
+    description:
+      "Engineering-first cloud migration, DevOps automation, and modernisation consultancy for Australia and worldwide.",
+    url: "/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-dark py-16 px-6 max-w-5xl mx-auto">

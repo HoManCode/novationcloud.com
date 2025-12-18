@@ -1,3 +1,18 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cloud & DevOps Services | NovationCloud",
+  description:
+    "Cloud migration, DevOps automation, application modernisation, and cloud optimisation services for AWS and Azure — serving Australia and global teams.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Cloud & DevOps Services | NovationCloud",
+    description:
+      "Migration, DevOps automation, modernisation, and optimisation services for AWS and Azure, globally.",
+    url: "/services",
+  },
+};
+
 export default function ServicesPage() {
   return (
     <main className="bg-lightBg text-black min-h-screen py-16 px-6 max-w-6xl mx-auto">

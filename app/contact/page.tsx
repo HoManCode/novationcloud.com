@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact NovationCloud | Cloud & DevOps Consultation",
+  description:
+    "Talk with NovationCloud about cloud migration, DevOps automation, and application modernisation. Australia-first focus, available worldwide.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact NovationCloud",
+    description:
+      "Discuss cloud migration, DevOps automation, and modernisation with NovationCloud engineers, wherever you are.",
+    url: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
