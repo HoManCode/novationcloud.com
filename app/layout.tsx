@@ -4,14 +4,20 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const cfBeaconToken = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN;
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://novationcloud.com"),
   title: "NovationCloud | Cloud & DevOps Consulting",
   description:
-    "NovationCloud delivers expert cloud migration, DevOps automation, and application modernisation for businesses in Australia.",
+    "NovationCloud delivers expert cloud migration, DevOps automation, and application modernisation for teams in Australia and worldwide.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "NovationCloud",
     description:
-      "Cloud, DevOps & modernisation consulting built by real engineers.",
+      "Cloud, DevOps & modernisation consulting built by real engineers, serving Australia and global teams.",
     url: "https://novationcloud.com",
     siteName: "NovationCloud",
     images: [
@@ -33,13 +39,13 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     name: "NovationCloud",
     description:
-      "Cloud migration, DevOps automation and application modernisation consultancy based in Australia.",
+      "Cloud migration, DevOps automation and application modernisation consultancy serving Australia first and global customers.",
     url: "https://novationcloud.com",
     logo: "https://novationcloud.com/novationcloud-logo.svg",
-    areaServed: "Australia",
+    areaServed: ["Australia", "Global"],
     serviceType: "IT Consulting",
   };
 
@@ -56,6 +62,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {cfBeaconToken ? (
+          // Cloudflare Web Analytics
+          <Script
+            id="cf-web-analytics"
+            strategy="afterInteractive"
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token":"${cfBeaconToken}"}`}
+          />
+        ) : null}
       </body>
     </html>
   );
