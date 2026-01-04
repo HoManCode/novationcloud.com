@@ -18,13 +18,13 @@ jobs:
           script: |
             set -e
 
+            # Go to project directory
             cd /home/pi/novationcloud.com
 
-            # Pull latest code only
+            # Pull latest code only (runner owns this)
             git fetch origin
             git checkout dev
             git reset --hard origin/dev
 
-            # Trigger deploy as pi user
-            ./deploy.sh
-
+            # Trigger build & PM2 reload as 'pi' user (requires sudoers NOPASSWD)
+            sudo -u pi /home/pi/novationcloud.com/deploy.sh
