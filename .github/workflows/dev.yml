@@ -20,8 +20,11 @@ jobs:
 
             cd /home/pi/novationcloud.com
 
+            # Pull latest code only
             git fetch origin
             git checkout dev
-            git pull origin dev
+            git reset --hard origin/dev
 
-            npm install
+            # Trigger deploy as pi user
+            ./deploy.sh
+
