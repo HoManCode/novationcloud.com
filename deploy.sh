@@ -11,7 +11,7 @@ npm install
 npm run build
 
 # Restart app with PM2
-pm2 start npm --name novationcloud -- start || pm2 restart novationcloud
+pm2 restart novationcloud || pm2 start npm --name novationcloud -- start
 pm2 save
 
 echo "Deployment finished!"
