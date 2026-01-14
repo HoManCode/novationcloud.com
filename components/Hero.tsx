@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white shadow-lg hover:brightness-110 text-center text-sm sm:text-base"
+              className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 text-center text-sm sm:text-base"
             >
               Book consultation
             </Link>
