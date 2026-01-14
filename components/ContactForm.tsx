@@ -136,9 +136,9 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+      className="space-y-4 rounded-2xl border border-gray-200 bg-white p-4 sm:p-6 shadow-sm"
     >
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-1 text-sm font-medium text-gray-700">
           Name
           <input
@@ -212,12 +212,12 @@ export default function ContactForm() {
         </p>
       )}
 
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-500">Response within one business day.</p>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <p className="text-xs sm:text-sm text-gray-500">Response within one business day.</p>
         <button
           type="submit"
           disabled={isSubmitDisabled}
-          className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-indigo-300"
+          className="w-full sm:w-auto rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-indigo-300"
         >
           {isPending ? "Sending..." : "Send message"}
         </button>

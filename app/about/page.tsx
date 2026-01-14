@@ -15,16 +15,16 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-dark py-16 px-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">About NovationCloud</h1>
+    <main className="min-h-screen bg-dark py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">About NovationCloud</h1>
 
-      <p className="text-gray-300 max-w-2xl mb-8">
+      <p className="text-gray-300 max-w-2xl mb-6 sm:mb-8 text-sm sm:text-base">
         NovationCloud is an engineering-led cloud consultancy that helps
         companies modernise their infrastructure, accelerate delivery and
         improve reliability without the complexity of large consultancies.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         <AboutCard title="Engineering-first">
           We care about working systems, not PowerPoints and theory.
         </AboutCard>

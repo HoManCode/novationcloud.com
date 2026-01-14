@@ -8,6 +8,7 @@ const cfBeaconToken = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://novationcloud.com"),
+  viewport: "width=device-width, initial-scale=1",
   title: "NovationCloud | Cloud & DevOps Consulting",
   description:
     "NovationCloud delivers expert cloud migration, DevOps automation, and application modernisation for teams in Australia and worldwide.",

@@ -15,16 +15,16 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="bg-lightBg text-black min-h-screen py-16 px-6 max-w-6xl mx-auto">
+    <main className="bg-lightBg text-black min-h-screen py-12 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
 
-      <h1 className="text-3xl font-bold mb-4">Services</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Services</h1>
 
-      <p className="text-gray-600 max-w-xl mb-10">
+      <p className="text-gray-600 max-w-xl mb-8 sm:mb-10 text-sm sm:text-base">
         We deliver practical engineering services that reduce risk, improve release
         velocity and enhance reliability.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
         <ServiceCard
           title="Cloud Migration"
           description="AWS/Azure landing zones, security baselines, and guided migration with minimal downtime."
