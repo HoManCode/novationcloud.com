@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
@@ -6,9 +6,13 @@ import Footer from "@/components/Footer";
 
 const cfBeaconToken = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN;
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://novationcloud.com"),
-  viewport: "width=device-width, initial-scale=1",
   title: "NovationCloud | Cloud & DevOps Consulting",
   description:
     "NovationCloud delivers expert cloud migration, DevOps automation, and application modernisation for teams in Australia and worldwide.",
