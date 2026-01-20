@@ -19,13 +19,13 @@ export default function Hero() {
             Cloud · DevOps · Software
           </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-3 sm:mb-4">
-            Accelerating{" "}
-            <span className="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
-              cloud transformation
-            </span>{" "}
+          <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-3 sm:mb-4">
+            Accelerating
+            <br />
+            cloud transformation
+            <br />
             with engineering excellence.
-          </h1>
+          </h1>  
 
           <p className="text-gray-300 max-w-md mb-6 text-sm sm:text-base">
             We help teams migrate, modernise and operate cloud workloads with
