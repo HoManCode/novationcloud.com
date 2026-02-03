@@ -16,15 +16,27 @@ export default function Header() {
             width={32}
             height={32}
           />
-          <span className="font-semibold text-sm tracking-wide">NovationCloud</span>
+          <span className="font-semibold text-sm tracking-wide">
+            NovationCloud
+          </span>
         </Link>
 
-        <nav className="hidden md:flex gap-6 text-sm text-gray-300">
+        {/* Desktop nav + CTA */}
+        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
           <Link href="/services" className="hover:text-white">Services</Link>
           <Link href="/about" className="hover:text-white">About</Link>
           <Link href="/contact" className="hover:text-white">Contact</Link>
+
+          {/* CTA Button */}
+          <a
+            href="tel:+61469354013"
+            className="ml-4 inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-500 transition"
+          >
+            📞 Call for IT Support
+          </a>
         </nav>
 
+        {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-gray-300"
@@ -40,12 +52,21 @@ export default function Header() {
         </button>
       </div>
 
+      {/* Mobile menu */}
       {isOpen && (
         <nav className="md:hidden border-t border-white/10 bg-dark/95">
           <div className="px-4 py-4 flex flex-col gap-4 text-sm text-gray-300">
-            <Link href="/services" className="hover:text-white" onClick={() => setIsOpen(false)}>Services</Link>
-            <Link href="/about" className="hover:text-white" onClick={() => setIsOpen(false)}>About</Link>
-            <Link href="/contact" className="hover:text-white" onClick={() => setIsOpen(false)}>Contact</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)}>Services</Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
+
+            {/* Mobile CTA */}
+            <a
+              href="tel:+61469354013"
+              className="mt-2 inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-lg font-medium"
+            >
+              📞 Call for IT Support
+            </a>
           </div>
         </nav>
       )}

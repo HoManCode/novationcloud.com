@@ -56,14 +56,6 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 gap-4 sm:gap-6 text-sm">
             <div>
-              <strong className="text-base sm:text-lg text-white block">40% faster</strong>
-              <span className="text-gray-400 text-xs">delivery cycles</span>
-            </div>
-            <div>
-              <strong className="text-base sm:text-lg text-white block">99.9% uptime</strong>
-              <span className="text-gray-400 text-xs">architectures</span>
-            </div>
-            <div>
               <strong className="text-base sm:text-lg text-white block">Cloud-native</strong>
               <span className="text-gray-400 text-xs">solutions</span>
             </div>

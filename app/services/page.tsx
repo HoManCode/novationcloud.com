@@ -26,12 +26,12 @@ export default function ServicesPage() {
 
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
         <ServiceCard
-          title="Cloud Migration"
-          description="AWS/Azure landing zones, security baselines, and guided migration with minimal downtime."
+          title="Setup contact center platform"
+          description="Designing and implementing scalable, secure, and cost-effective contact center platforms on AWS Connect."
         />
         <ServiceCard
-          title="DevOps Automation"
-          description="CI/CD pipelines, IaC, environment automation and developer productivity tooling."
+          title="Web & Mobile app development"
+          description="Building scalable, secure and maintainable applications tailored to your business needs."
         />
         <ServiceCard
           title="App Modernisation"
