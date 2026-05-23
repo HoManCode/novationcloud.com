@@ -8,7 +8,7 @@ export default function Hero() {
 
         <div>
           <Image
-            src="/novationcloud-icon.png"
+            src="/new-logo.jpeg"
             alt="NovationCloud"
             width={180}
             height={40}
