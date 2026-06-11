@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About NovationCloud | Engineering-led Cloud Consultancy",
+  title: "About NovationCloud | Melbourne Software & Cloud Consultancy",
   description:
-    "Learn about NovationCloud: engineering-first cloud migration, DevOps automation, and modernisation consultancy serving Australia first and global customers.",
+    "Learn about NovationCloud, a Melbourne-based consultancy delivering AI automation, app development, app modernisation, and cloud optimisation across Australia.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About NovationCloud",
     description:
-      "Engineering-first cloud migration, DevOps automation, and modernisation consultancy for Australia and worldwide.",
+      "Melbourne engineering consultancy for AI automation, software development, modernisation and cloud optimisation across Australia.",
     url: "/about",
   },
 };
@@ -20,8 +20,9 @@ export default function AboutPage() {
 
       <p className="text-gray-300 max-w-2xl mb-6 sm:mb-8 text-sm sm:text-base">
         NovationCloud is an engineering-led cloud consultancy that helps
-        companies modernise their infrastructure, accelerate delivery and
-        improve reliability without the complexity of large consultancies.
+        Melbourne and Australian businesses automate workflows, build reliable
+        apps, modernise infrastructure and improve cloud reliability without the
+        complexity of large consultancies.
       </p>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">

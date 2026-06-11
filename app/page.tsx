@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
-  title: "Cloud, DevOps & Modernisation Consulting | NovationCloud",
+  title: "Melbourne AI Automation, App Development & Cloud Consulting | NovationCloud",
   description:
-    "Cloud migration, DevOps automation, and application modernisation for teams in Australia and worldwide. Book a consultation with NovationCloud engineers.",
+    "Melbourne-based AI automation service, web and mobile app development, app modernisation, and cloud optimisation for businesses across Australia.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Cloud, DevOps & Modernisation Consulting | NovationCloud",
+    title: "Melbourne AI Automation, App Development & Cloud Consulting | NovationCloud",
     description:
-      "Cloud migration, DevOps automation, and application modernisation for Australia-first and global teams.",
+      "AI automation service, app development, app modernisation and cloud optimisation for Australian businesses.",
     url: "/",
     images: [
       {

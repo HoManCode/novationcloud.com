@@ -13,16 +13,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://novationcloud.com"),
-  title: "NovationCloud | Cloud & DevOps Consulting",
+  title: "NovationCloud | Melbourne Cloud, AI Automation & App Development",
   description:
-    "NovationCloud delivers expert cloud migration, DevOps automation, and application modernisation for teams in Australia and worldwide.",
+    "Melbourne-based NovationCloud delivers AI automation service, web and mobile app development, app modernisation, and cloud optimisation across Australia.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "NovationCloud",
     description:
-      "Cloud, DevOps & modernisation consulting built by real engineers, serving Australia and global teams.",
+      "Melbourne cloud, AI automation, app development, modernisation and optimisation consulting for Australian businesses.",
     url: "https://novationcloud.com",
     siteName: "NovationCloud",
     images: [
@@ -47,11 +47,23 @@ export default function RootLayout({
     "@type": "ProfessionalService",
     name: "NovationCloud",
     description:
-      "Cloud migration, DevOps automation and application modernisation consultancy serving Australia first and global customers.",
+      "Melbourne-based AI automation, app development, app modernisation and cloud optimisation consultancy serving businesses across Australia.",
     url: "https://novationcloud.com",
     logo: "https://novationcloud.com/novationcloud-logo.svg",
-    areaServed: ["Australia", "Global"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Melbourne",
+      addressRegion: "VIC",
+      addressCountry: "AU",
+    },
+    areaServed: ["Melbourne", "Victoria", "Australia"],
     serviceType: "IT Consulting",
+    knowsAbout: [
+      "AI automation service",
+      "Web & Mobile app development",
+      "App Modernisation",
+      "Cloud Optimisation",
+    ],
   };
 
   return (

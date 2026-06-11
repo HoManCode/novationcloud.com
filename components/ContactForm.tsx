@@ -136,57 +136,57 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-gray-200 bg-white p-4 sm:p-6 shadow-sm"
+      className="space-y-4 rounded-2xl border border-white/10 bg-slate-900 p-4 sm:p-6 shadow-sm"
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-1 text-sm font-medium text-gray-700">
+        <label className="flex flex-col gap-1 text-sm font-medium text-gray-100">
           Name
           <input
             type="text"
             value={form.name}
             onChange={(e) => updateField("name")(e.target.value)}
-            className="rounded-lg border border-gray-200 px-3 py-2 text-base focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+            className="rounded-lg border border-white/10 bg-dark px-3 py-2 text-base text-white placeholder:text-gray-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
             placeholder="Jane Doe"
             required
           />
         </label>
 
-        <label className="flex flex-col gap-1 text-sm font-medium text-gray-700">
+        <label className="flex flex-col gap-1 text-sm font-medium text-gray-100">
           Email
           <input
             type="email"
             value={form.email}
             onChange={(e) => updateField("email")(e.target.value)}
-            className="rounded-lg border border-gray-200 px-3 py-2 text-base focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+            className="rounded-lg border border-white/10 bg-dark px-3 py-2 text-base text-white placeholder:text-gray-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
             placeholder="you@company.com"
             required
           />
         </label>
       </div>
 
-      <label className="flex flex-col gap-1 text-sm font-medium text-gray-700">
+      <label className="flex flex-col gap-1 text-sm font-medium text-gray-100">
         Company (optional)
         <input
           type="text"
           value={form.company}
           onChange={(e) => updateField("company")(e.target.value)}
-          className="rounded-lg border border-gray-200 px-3 py-2 text-base focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+          className="rounded-lg border border-white/10 bg-dark px-3 py-2 text-base text-white placeholder:text-gray-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
           placeholder="Acme Corp"
         />
       </label>
 
-      <label className="flex flex-col gap-1 text-sm font-medium text-gray-700">
+      <label className="flex flex-col gap-1 text-sm font-medium text-gray-100">
         Project details
         <textarea
           value={form.message}
           onChange={(e) => updateField("message")(e.target.value)}
-          className="min-h-[140px] rounded-lg border border-gray-200 px-3 py-2 text-base focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+          className="min-h-[140px] rounded-lg border border-white/10 bg-dark px-3 py-2 text-base text-white placeholder:text-gray-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
           placeholder="What do you need help with?"
           required
         />
       </label>
 
-      <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
+      <div className="rounded-lg border border-white/10 bg-dark p-3">
         <div
           className="cf-turnstile"
           data-sitekey={TURNSTILE_SITE_KEY}
@@ -195,29 +195,29 @@ export default function ContactForm() {
           data-expired-callback="onTurnstileExpire"
         />
         {captchaError && (
-          <p className="mt-2 text-sm text-red-600" role="alert">
+          <p className="mt-2 text-sm text-red-300" role="alert">
             {captchaError}
           </p>
         )}
       </div>
 
       {error && (
-        <p className="text-sm text-red-600" role="alert">
+        <p className="text-sm text-red-300" role="alert">
           {error}
         </p>
       )}
       {status === "success" && (
-        <p className="text-sm text-green-600" role="status">
+        <p className="text-sm text-green-300" role="status">
           Thanks for reaching out! We will get back to you soon.
         </p>
       )}
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <p className="text-xs sm:text-sm text-gray-500">Response within one business day.</p>
+        <p className="text-xs sm:text-sm text-gray-400">Response within one business day.</p>
         <button
           type="submit"
           disabled={isSubmitDisabled}
-          className="w-full sm:w-auto rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-indigo-300"
+          className="w-full sm:w-auto rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white/10 disabled:cursor-not-allowed disabled:text-gray-500"
         >
           {isPending ? "Sending..." : "Send message"}
         </button>

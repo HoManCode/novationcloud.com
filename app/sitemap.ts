@@ -1,10 +1,17 @@
 import type { MetadataRoute } from "next";
+import { services } from "@/lib/services";
 
 const baseUrl = "https://novationcloud.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const routes = ["/", "/services", "/about", "/contact"];
+  const routes = [
+    "/",
+    "/services",
+    ...services.map((service) => `/blog/${service.slug}`),
+    "/about",
+    "/contact",
+  ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

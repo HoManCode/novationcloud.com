@@ -16,20 +16,20 @@ export default function Hero() {
           />
 
           <p className="text-xs uppercase tracking-[0.2em] text-blue-400 mb-3 sm:mb-4">
-            Cloud · DevOps · Software
+            Melbourne · AI Automation · Cloud · Software
           </p>
 
           <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-3 sm:mb-4">
-            Accelerating
+            Melbourne software,
             <br />
-            cloud transformation
+            AI automation and
             <br />
-            with engineering excellence.
+            cloud consulting.
           </h1>  
 
           <p className="text-gray-300 max-w-md mb-6 text-sm sm:text-base">
-            We help teams migrate, modernise and operate cloud workloads with
-            automation, reliability and security.
+            We help businesses across Australia build reliable apps, modernise
+            legacy systems, automate manual workflows and optimise cloud spend.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="grid grid-cols-2 gap-4 sm:gap-6 text-sm">
             <div>
               <strong className="text-base sm:text-lg text-white block">Cloud-native</strong>
-              <span className="text-gray-400 text-xs">solutions</span>
+              <span className="text-gray-400 text-xs">Australia-wide delivery</span>
             </div>
             <div>
               <strong className="text-base sm:text-lg text-white block">Engineering-first</strong>
