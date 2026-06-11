@@ -28,23 +28,8 @@ export default function ContactPage() {
       </p>
 
       <div className="grid md:grid-cols-2 gap-8 sm:gap-10">
-        {/* Left: Contact + Phone */}
+        {/* Left: Contact */}
         <div>
-          <div className="mb-6 rounded-lg border border-gray-200 bg-white p-4">
-            <p className="text-sm text-gray-600 mb-1">
-              Prefer to talk directly?
-            </p>
-            <a
-              href="tel:+61469354013"
-              className="text-lg font-semibold text-blue-600 hover:underline"
-            >
-              📞 0469 354 013
-            </a>
-            <p className="text-xs text-gray-500 mt-1">
-              Business hours · Australia (AEST)
-            </p>
-          </div>
-
           <ContactForm />
         </div>
 
