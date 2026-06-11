@@ -18,7 +18,9 @@ export default function Hero() {
               />
               <div>
                 <p className="text-sm font-semibold text-white">NovationCloud</p>
-                <p className="text-xs text-gray-400">Melbourne based, Australia-wide</p>
+                <p className="text-xs text-gray-400">
+                  Smarter Operations Through AI and Cloud
+                </p>
               </div>
             </div>
 
