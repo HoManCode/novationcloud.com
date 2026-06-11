@@ -22,9 +22,9 @@ export default function ContactPage() {
       </h1>
 
       <p className="text-gray-300 mb-8 max-w-2xl text-sm sm:text-base">
-        Need an AI automation service, a new app, help modernising an existing
-        system, or support with cloud optimisation? Get in touch from Melbourne
-        or anywhere in Australia to discuss your requirements and timelines.
+      Ready to transform your business with AI? Whether you need workflow automation, a custom AI chatbot, website development, 
+      or cloud cost optimisation, we provide practical solutions tailored to your needs. Based in Melbourne and working with clients 
+      Australia-wide, we're here to help bring your ideas to life.
       </p>
 
       <div className="max-w-2xl">

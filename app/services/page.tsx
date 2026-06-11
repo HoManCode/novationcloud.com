@@ -3,14 +3,14 @@ import Link from "next/link";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Melbourne AI Automation, App Development & Cloud Services | NovationCloud",
+  title: "AI Automation, Web Development & Cloud Services | NovationCloud",
   description:
-    "AI automation service, web and mobile app development, app modernisation, and cloud optimisation from Melbourne for businesses across Australia.",
+    "AI automation service, web and mobile app development, Chatbot Development, and cloud cost optimisation from Melbourne for businesses across Australia.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Melbourne AI Automation, App Development & Cloud Services | NovationCloud",
+    title: "AI Automation, Web Development & Cloud Services | NovationCloud",
     description:
-      "Melbourne-based software, AI automation, modernisation and cloud optimisation services for Australian businesses.",
+      "Melbourne-based software, AI automation service, web and mobile app development, Chatbot Development, and cloud cost optimisation services for Australian businesses.",
     url: "/services",
   },
 };
@@ -23,7 +23,7 @@ export default function ServicesPage() {
 
       <p className="text-gray-600 max-w-xl mb-8 sm:mb-10 text-sm sm:text-base">
         Melbourne-based engineering services for Australian businesses that need
-        practical automation, reliable applications and lower cloud operating costs.
+        practical AI automation, reliable applications and lower cloud operating costs.
       </p>
 
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">

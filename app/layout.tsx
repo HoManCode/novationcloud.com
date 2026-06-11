@@ -62,7 +62,8 @@ export default function RootLayout({
       "AI automation service",
       "Web & Mobile app development",
       "App Modernisation",
-      "Cloud Optimisation",
+      "Chatbot Development",
+      "Cloud Cost Optimisation",
     ],
   };
 

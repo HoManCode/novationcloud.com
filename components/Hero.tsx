@@ -16,20 +16,21 @@ export default function Hero() {
           />
 
           <p className="text-xs uppercase tracking-[0.2em] text-blue-400 mb-3 sm:mb-4">
-            Melbourne · AI Automation · Cloud · Software
+            AI Automation · Cloud Optimisation · Web Development
           </p>
 
           <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-3 sm:mb-4">
-            Melbourne software,
+            AI Automation,
             <br />
-            AI automation and
+            Chatbot Development and
             <br />
-            cloud consulting.
+            Cloud Consulting.
           </h1>  
 
           <p className="text-gray-300 max-w-md mb-6 text-sm sm:text-base">
-            We help businesses across Australia build reliable apps, modernise
-            legacy systems, automate manual workflows and optimise cloud spend.
+          We help businesses across Australia accelerate growth through custom software development, legacy system modernisation, 
+          AI-powered chatbots, intelligent call centre automation, workflow automation, and cloud cost optimisation. Our solutions 
+          are designed to improve customer experience, increase operational efficiency, and reduce technology costs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
