@@ -18,9 +18,9 @@
   "dependencies": {
     "@google/genai": "^2.17.1",
     "lucide-react": "^1.33.0",
-    "next": "^14.2.35",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^15.5.21",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "resend": "^3.2.0"
   },
   "overrides": {
@@ -32,8 +32,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "^14.2.35",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.21",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.124.0"

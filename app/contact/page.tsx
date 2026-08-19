@@ -24,7 +24,7 @@ export default function ContactPage() {
       <p className="text-gray-300 mb-8 max-w-2xl text-sm sm:text-base">
       Ready to transform your business with AI? Whether you need workflow automation, a custom AI chatbot, website development, 
       or cloud cost optimisation, we provide practical solutions tailored to your needs. Based in Melbourne and working with clients 
-      Australia-wide, we're here to help bring your ideas to life.
+      Australia-wide, we&apos;re here to help bring your ideas to life.
       </p>
 
       <div className="max-w-2xl">

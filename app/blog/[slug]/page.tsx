@@ -3,11 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
-type BlogPostPageProps = {
-  params: {
+interface BlogPostPageProps {
+  params: Promise<{
     slug: string;
-  };
-};
+  }>;
+}
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -15,8 +15,11 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: BlogPostPageProps): Metadata {
-  const post = getBlogPost(params.slug);
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     return {};
@@ -26,7 +29,9 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
     title: `${post.title} | NovationCloud`,
     description: post.description,
     keywords: [...post.service.keywords],
-    alternates: { canonical: `/blog/${post.service.slug}` },
+    alternates: {
+      canonical: `/blog/${post.service.slug}`,
+    },
     openGraph: {
       title: `${post.title} | NovationCloud`,
       description: post.description,
@@ -36,8 +41,11 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug);
+export default async function BlogPostPage({
+  params,
+}: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     notFound();
@@ -93,14 +101,23 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <h2 className="text-xl sm:text-2xl font-bold mb-3">
                 {section.heading}
               </h2>
-              <p className="text-gray-200 leading-7">{section.body}</p>
+
+              <p className="text-gray-200 leading-7">
+                {section.body}
+              </p>
             </section>
           ))}
         </div>
 
         <div className="mt-10 p-6 bg-slate-900 border border-white/10 rounded-xl">
-          <h2 className="text-xl font-bold mb-3">Need help with this?</h2>
-          <p className="text-gray-200 mb-5">{post.cta}</p>
+          <h2 className="text-xl font-bold mb-3">
+            Need help with this?
+          </h2>
+
+          <p className="text-gray-200 mb-5">
+            {post.cta}
+          </p>
+
           <Link
             href="/contact"
             className="inline-block px-5 py-3 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/10"
@@ -112,7 +129,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
       />
     </main>
   );
