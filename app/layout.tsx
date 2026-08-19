@@ -3,6 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 
 const cfBeaconToken = process.env.NEXT_PUBLIC_CF_BEACON_TOKEN;
 
@@ -73,6 +74,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ChatWidget />
 
         {/* SEO Structured Data */}
         <Script

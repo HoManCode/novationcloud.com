@@ -8,13 +8,96 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  deploy:
+  security-and-build:
     runs-on: self-hosted
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -e
+          npm ci
+
+      # ---------------------------------------------------------
+      # Dependency vulnerability scanning
+      # ---------------------------------------------------------
+      - name: Run npm audit
+        shell: bash
+        run: |
+          set -e
+          npm audit --audit-level=high
+
+      # ---------------------------------------------------------
+      # Checkov - Infrastructure as Code security scanning
+      # ---------------------------------------------------------
+      - name: Install Checkov
+        shell: bash
+        run: |
+          set -e
+          python3 -m pip install --user checkov
+
+      - name: Run Checkov
+        shell: bash
+        run: |
+          set -e
+          export PATH="$HOME/.local/bin:$PATH"
+
+          checkov -d . \
+            --quiet \
+            --skip-path node_modules
+
+      # ---------------------------------------------------------
+      # Secret scanning
+      # ---------------------------------------------------------
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ---------------------------------------------------------
+      # ESLint
+      # ---------------------------------------------------------
+      - name: Run ESLint
+        shell: bash
+        run: |
+          set -e
+          npm run lint
+
+      # ---------------------------------------------------------
+      # TypeScript type checking
+      # ---------------------------------------------------------
+      - name: TypeScript type check
+        shell: bash
+        run: |
+          set -e
+          npx tsc --noEmit
+
+      # ---------------------------------------------------------
+      # Production build verification
+      # ---------------------------------------------------------
+      - name: Build application
+        shell: bash
+        run: |
+          set -e
+          npm run build
+
+  # -----------------------------------------------------------
+  # Deploy only if every previous check succeeds
+  # -----------------------------------------------------------
+  deploy:
+    needs: security-and-build
+    runs-on: self-hosted
+
+    steps:
       - name: Deploy locally on Raspberry Pi
         shell: bash
         run: |
